@@ -8,5 +8,8 @@ module.exports = function solveEquation(equation) {
 	const c = +string_b.slice(b_zv+2); //взяли число с
 	const x1 = (-b + (Math.sqrt(b*b - 4*a*c))) / (2*a);
 	const x2 = (-b - (Math.sqrt(b*b - 4*a*c))) / (2*a);
-  return [Math.round (x1), Math.round(x2)];
+	const solutions = [Math.round (x1), Math.round(x2)]
+	sortFunction = (left, right) => left - right;
+	solutions.sort (sortFunction)
+  return solutions;
 }
